@@ -8,6 +8,7 @@ import { AdmissionsChart } from './components/AdmissionsChart';
 import { HospitalTable } from './components/HospitalTable';
 import { HospitalDetailModal } from './components/HospitalDetailModal';
 import { CompareModal } from './components/CompareModal';
+import { DisqusComments } from './components/DisqusComments';
 
 export default function App() {
   const [hospitals, setHospitals] = useState<HospitalProfile[]>([]);
@@ -262,6 +263,9 @@ export default function App() {
             onSelectHospital={(id) => setSelectedHospitalId(id)}
             onOpenHospitalProfile={(h) => setProfileHospital(h)}
           />
+
+          {/* Disqus Comments Section */}
+          <DisqusComments />
         </div>
       </main>
 
