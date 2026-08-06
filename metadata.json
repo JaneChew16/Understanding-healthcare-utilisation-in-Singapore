@@ -1,0 +1,6 @@
+{
+  "name": "Singapore Hospital Admissions Search",
+  "description": "Interactive search tool and AI query assistant for Singapore public hospital admission rates, bed occupancy, and historical healthcare statistics by hospital and year.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
