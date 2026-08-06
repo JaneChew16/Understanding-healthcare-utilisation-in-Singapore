@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download, FileText, ArrowLeftRight, RotateCcw, ShieldCheck, Database } from 'lucide-react';
+import { Download, FileText, ArrowLeftRight, RotateCcw, Database, ExternalLink } from 'lucide-react';
 
 interface HeaderNavProps {
   onExportCSV: () => void;
@@ -30,8 +30,20 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
           </span>
         </div>
         <p className="text-[10px] text-slate-500 font-medium flex items-center gap-1.5 mt-0.5">
-          <Database className="w-3 h-3 text-slate-400" />
-          <span>Source: MOH Health Informatics Portal &bull; Viewing: <strong className="text-slate-700 font-semibold">{selectedHospitalName}</strong></span>
+          <Database className="w-3 h-3 text-slate-400 shrink-0" />
+          <span>
+            Source:{' '}
+            <a
+              href="https://www.healthhub.sg/support-and-tools/statistics-on-healthcare/admissions-and-outpatient-attendances"
+              target="_blank"
+              rel="noreferrer"
+              className="text-blue-600 hover:underline font-semibold inline-flex items-center gap-0.5"
+            >
+              HealthHub SG (MOH) Admissions & Outpatient Attendances
+              <ExternalLink className="w-2.5 h-2.5" />
+            </a>{' '}
+            &bull; Viewing: <strong className="text-slate-700 font-semibold">{selectedHospitalName}</strong>
+          </span>
         </p>
       </div>
 

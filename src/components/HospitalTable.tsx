@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { HospitalYearlyStats, HospitalProfile } from '../types/hospital';
-import { Search, ArrowUpDown, ChevronRight, Building, MapPin } from 'lucide-react';
+import { Search, ArrowUpDown, ChevronRight, Building, MapPin, ExternalLink } from 'lucide-react';
 
 interface HospitalTableProps {
   stats: HospitalYearlyStats[];
@@ -134,6 +134,16 @@ export const HospitalTable: React.FC<HospitalTableProps> = ({
 
         <div className="text-[10px] font-mono text-slate-500 uppercase flex items-center gap-3">
           <span>Showing: {filteredData.length} Public Institutions ({selectedYear})</span>
+          <span>&bull;</span>
+          <a
+            href="https://www.healthhub.sg/support-and-tools/statistics-on-healthcare/admissions-and-outpatient-attendances"
+            target="_blank"
+            rel="noreferrer"
+            className="text-blue-600 hover:underline font-semibold flex items-center gap-0.5 normal-case font-sans"
+          >
+            <span>HealthHub SG Dataset</span>
+            <ExternalLink className="w-2.5 h-2.5" />
+          </a>
         </div>
       </div>
 

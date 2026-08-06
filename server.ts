@@ -129,7 +129,7 @@ app.post('/api/query', async (req: Request, res: Response) => {
     }
 
     const systemPrompt = `You are an expert Singapore Ministry of Health (MOH) healthcare analytics assistant.
-Your task is to answer user queries about Singapore public hospital admissions rates, bed occupancy rates, and hospital usage metrics based on official public healthcare dataset provided below.
+Your task is to answer user queries about Singapore public hospital admissions rates, bed occupancy rates, and outpatient attendances based on the official HealthHub Singapore dataset (https://www.healthhub.sg/support-and-tools/statistics-on-healthcare/admissions-and-outpatient-attendances) provided below.
 
 DATASET:
 ${datasetContext}
@@ -188,8 +188,8 @@ If comparing multiple hospitals or years, include comparison items. Include 3 re
       ...parsedData,
       isAIProcessed: true,
       groundingSources: [
-        { title: 'Ministry of Health Singapore (MOH) Public Hospital Statistics', url: 'https://www.moh.gov.sg/resources-statistics/singapore-health-facts' },
-        { title: 'Singapore Department of Statistics (DOS) Population & Healthcare', url: 'https://www.singstat.gov.sg' },
+        { title: 'HealthHub SG - Admissions and Outpatient Attendances', url: 'https://www.healthhub.sg/support-and-tools/statistics-on-healthcare/admissions-and-outpatient-attendances' },
+        { title: 'Ministry of Health Singapore (MOH) Health Facts', url: 'https://www.moh.gov.sg/resources-statistics/singapore-health-facts' },
       ]
     });
   } catch (err: any) {

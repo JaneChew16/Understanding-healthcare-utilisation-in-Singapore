@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { HospitalProfile, HospitalYearlyStats } from '../types/hospital';
-import { X, ArrowLeftRight, Check, TrendingUp, AlertTriangle } from 'lucide-react';
+import { X, ArrowLeftRight, Check, TrendingUp, AlertTriangle, ExternalLink } from 'lucide-react';
 
 interface CompareModalProps {
   isOpen: boolean;
@@ -216,7 +216,16 @@ export const CompareModal: React.FC<CompareModalProps> = ({
         </div>
 
         {/* Footer */}
-        <div className="p-4 bg-slate-50 border-t border-slate-200 flex justify-end">
+        <div className="p-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between">
+          <a
+            href="https://www.healthhub.sg/support-and-tools/statistics-on-healthcare/admissions-and-outpatient-attendances"
+            target="_blank"
+            rel="noreferrer"
+            className="text-[10px] text-blue-600 font-semibold hover:underline flex items-center gap-1"
+          >
+            <span>Data Source: HealthHub SG Healthcare Statistics</span>
+            <ExternalLink className="w-2.5 h-2.5" />
+          </a>
           <button
             onClick={onClose}
             className="px-4 py-2 bg-slate-900 text-white rounded text-xs font-semibold hover:bg-slate-800 transition-colors cursor-pointer"

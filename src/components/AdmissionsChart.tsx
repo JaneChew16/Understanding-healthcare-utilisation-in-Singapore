@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { HospitalYearlyStats, HospitalProfile } from '../types/hospital';
-import { BarChart3, PieChart, Info } from 'lucide-react';
+import { BarChart3, PieChart, Info, ExternalLink } from 'lucide-react';
 
 interface AdmissionsChartProps {
   statsList: HospitalYearlyStats[];
@@ -204,10 +204,19 @@ export const AdmissionsChart: React.FC<AdmissionsChartProps> = ({
         </div>
 
         <div className="mt-6 pt-4 border-t border-slate-100 text-center">
-          <p className="text-[10px] text-slate-500 italic flex items-center justify-center gap-1">
+          <p className="text-[10px] text-slate-500 italic flex items-center justify-center gap-1 flex-wrap">
             <Info className="w-3 h-3 text-slate-400 shrink-0" />
             <span>
-              Represents primary inpatient admissions for {selectedHospital ? selectedHospital.name : 'Singapore Public Hospitals'} in FY{selectedYear}.
+              Represents primary inpatient admissions for {selectedHospital ? selectedHospital.name : 'Singapore Public Hospitals'} in FY{selectedYear}. Data Source:{' '}
+              <a
+                href="https://www.healthhub.sg/support-and-tools/statistics-on-healthcare/admissions-and-outpatient-attendances"
+                target="_blank"
+                rel="noreferrer"
+                className="text-blue-600 hover:underline not-italic font-semibold inline-flex items-center gap-0.5"
+              >
+                HealthHub SG
+                <ExternalLink className="w-2.5 h-2.5" />
+              </a>
             </span>
           </p>
         </div>

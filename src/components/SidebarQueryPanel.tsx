@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Building2, Calendar, Filter, Sparkles, Activity, CheckCircle2, RefreshCw } from 'lucide-react';
+import { Search, Building2, Calendar, Filter, Sparkles, Activity, CheckCircle2, RefreshCw, ExternalLink } from 'lucide-react';
 import { HospitalProfile } from '../types/hospital';
 
 interface SidebarQueryPanelProps {
@@ -221,7 +221,16 @@ export const SidebarQueryPanel: React.FC<SidebarQueryPanelProps> = ({
       </div>
 
       {/* Sidebar Footer Status */}
-      <div className="p-4 border-t border-slate-200 bg-slate-50">
+      <div className="p-4 border-t border-slate-200 bg-slate-50 space-y-2">
+        <a
+          href="https://www.healthhub.sg/support-and-tools/statistics-on-healthcare/admissions-and-outpatient-attendances"
+          target="_blank"
+          rel="noreferrer"
+          className="text-[10px] text-blue-600 hover:underline font-semibold flex items-center justify-between bg-blue-50/70 p-2 rounded border border-blue-100"
+        >
+          <span>HealthHub SG Statistics Dataset</span>
+          <ExternalLink className="w-3 h-3 text-blue-500 shrink-0" />
+        </a>
         <div className="flex items-center justify-between text-[10px] font-mono text-slate-500 uppercase">
           <span className="flex items-center gap-1.5">
             <CheckCircle2 className="w-3 h-3 text-slate-400" /> DATA ENGINE
